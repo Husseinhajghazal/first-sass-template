@@ -1,0 +1,76 @@
+@import "colors";
+@import "media-queries";
+
+%center {
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  background-color: $light;
+  height: 5rem;
+  padding: 0.5rem calc((100vw - 75rem) / 2);
+  z-index: 10;
+  position: relative;
+  .logo {
+    color: $dark;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-left: 1.5rem;
+    @extend %center;
+  }
+  .bars {
+    opacity: 0;
+
+    @include tablet {
+      color: $dark;
+      opacity: 1;
+      position: absolute;
+      top: 1.375rem;
+      right: 1.25rem;
+      font-size: 2rem;
+    }
+  }
+  .menu {
+    @extend %center;
+    list-style: none;
+    text-align: center;
+    margin-right: 1.5rem;
+
+    @include tablet {
+      display: none;
+    }
+    .links {
+      color: $dark;
+      @extend %center;
+      justify-content: center;
+      text-decoration: none;
+      padding: 0 1rem;
+      transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      &:hover {
+        color: $lime;
+      }
+    }
+    #btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      outline: none;
+      border-radius: 0.25rem;
+      -webkit-border-radius: 0.25rem;
+      -moz-border-radius: 0.25rem;
+      -ms-border-radius: 0.25rem;
+      -o-border-radius: 0.25rem;
+      background-color: $lime;
+      margin-left: 1rem;
+      color: $light;
+      &:hover {
+        background: $orangeRed;
+      }
+    }
+  }
+}
